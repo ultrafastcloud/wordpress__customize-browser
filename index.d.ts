@@ -70,7 +70,8 @@ declare global {
             Values,
         };
     }
-    const wp: {
+    
+    interface wp {
         customize: Customize;
-    };
+    }
 }
