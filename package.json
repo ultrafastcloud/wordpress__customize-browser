@@ -1,0 +1,28 @@
+{
+    "name": "@types/wordpress__customize-browser",
+    "version": "5.5.5",
+    "description": "TypeScript definitions for @wordpress/customize-browser",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/wordpress__customize-browser",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Marek Dědič",
+            "githubUsername": "marekdedic",
+            "url": "https://github.com/marekdedic"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/wordpress__customize-browser"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/jquery": "*"
+    },
+    "typesPublisherContentHash": "81343fd33939f106086657ddda3136feedf5ac2d6191014ced8707439ae88119",
+    "typeScriptVersion": "4.5",
+    "nonNpm": true
+}
