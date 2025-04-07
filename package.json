@@ -24,5 +24,8 @@
     },
     "typesPublisherContentHash": "81343fd33939f106086657ddda3136feedf5ac2d6191014ced8707439ae88119",
     "typeScriptVersion": "4.5",
-    "nonNpm": true
+    "nonNpm": true,
+    "devDependencies": {
+        "prettier": "3.5.3"
+    }
 }

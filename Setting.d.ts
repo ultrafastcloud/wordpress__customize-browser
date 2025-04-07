@@ -8,9 +8,14 @@ export interface Setting_Options {
     previewer: Previewer<string>;
 }
 
-export class Setting<T> extends Value<T> {
+export interface Setting<T> extends Value<T> {
     defaults: Setting_Options;
     initialize(id?: string, value?: any, options?: Partial<Setting_Options>): void;
     preview(): void;
     findControls(): Control[];
+}
+
+export interface SettingConstructor {
+    new<T>(id?: string, value?: any, options?: Partial<Setting_Options>): Setting<T>;
+    extend<T>(protoProps: object, classProps?: object): SettingConstructor;
 }

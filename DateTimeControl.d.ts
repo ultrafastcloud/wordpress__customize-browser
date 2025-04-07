@@ -1,4 +1,4 @@
-import { Control } from "./Control";
+import { Control, ControlConstructor } from "./Control";
 
 export interface DateTime {
     year: string;
@@ -9,7 +9,7 @@ export interface DateTime {
     second: string;
 }
 
-export class DateTimeControl extends Control {
+export interface DateTimeControl extends Control {
     parseDateTime(datetime: string): DateTime | null;
     validateInputs(): boolean;
     updateDaysForMonth(): void;
@@ -19,4 +19,9 @@ export class DateTimeControl extends Control {
     convertHourToTwentyFourHourFormat(hourInTwelveHourFormat: string, meridian: "am" | "pm"): string;
     populateDateInputs(): boolean;
     toggleFutureDateNotification(notify: boolean): DateTimeControl;
+}
+
+export interface DateTimeControlConstructor extends ControlConstructor {
+    new(id?: string, options?: object): DateTimeControl;
+    extend(protoProps: object, classProps?: object): DateTimeControlConstructor;
 }

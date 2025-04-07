@@ -23,8 +23,7 @@ export interface Container_Deferred {
     embedded: JQuery.Deferred<any>;
 }
 
-export abstract class Container extends Class {
-    static instanceCounter?: number | undefined;
+export interface Container extends Class {
     defaultActiveArguments: Container_Arguments;
     defaultExpandedArguments: Container_Arguments;
     containerType: string;
@@ -50,7 +49,7 @@ export abstract class Container extends Class {
     _toggleActive(active: boolean, params?: Container_Arguments): boolean;
     activate(params?: Container_Arguments): boolean;
     deactivate(params?: Container_Arguments): boolean;
-    abstract onChangeExpanded(expanded: boolean, args: Container_Arguments): void | never;
+    onChangeExpanded(expanded: boolean, args: Container_Arguments): void | never;
     _toggleExpanded(expanded: boolean, params: Container_Arguments): boolean;
     expand(params: Container_Arguments): boolean;
     collapse(params: Container_Arguments): boolean;
@@ -58,4 +57,10 @@ export abstract class Container extends Class {
     focus(): void;
     getContainer(): string;
     getContent(): JQuery;
+}
+
+export interface ContainerConstructor {
+    instanceCounter?: number | undefined;
+    new(id?: string, options?: Container_Params): Container;
+    extend(protoProps: object, classProps?: object): ContainerConstructor;
 }

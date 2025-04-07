@@ -1,6 +1,6 @@
-import { Control } from "./Control";
+import { Control, ControlConstructor } from "./Control";
 
-export class CodeEditorControl extends Control {
+export interface CodeEditorControl extends Control {
     initEditor(): void;
     focus(params: any): void; // TODO
     initSyntaxHighlightingEditor(codeEditorSettings: any): void; // TODO
@@ -8,4 +8,9 @@ export class CodeEditorControl extends Control {
     onTabPrevious(): void;
     onUpdateErrorNotice(errorAnnotations: readonly any[]): void; // TODO
     initPlainTextareaEditor(): void;
+}
+
+export interface CodeEditorControlConstructor extends ControlConstructor {
+    new(id?: string, options?: object): CodeEditorControl;
+    extend(protoProps: object, classProps?: object): CodeEditorControlConstructor;
 }

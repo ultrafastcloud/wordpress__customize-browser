@@ -1,4 +1,4 @@
-import { Container, Container_Arguments, Container_Params } from "./Container";
+import { Container, Container_Arguments, Container_Params, ContainerConstructor } from "./Container";
 import { Control } from "./Control";
 import { Value } from "./Value";
 
@@ -7,7 +7,7 @@ export interface Section_Params extends Container_Params {
     customizeAction?: string | undefined;
 }
 
-export class Section extends Container {
+export interface Section extends Container {
     containerParent: string;
     containerPaneParent: string;
     id: string;
@@ -18,4 +18,9 @@ export class Section extends Container {
     isContextuallyActive(): boolean;
     controls(): Control[];
     onChangeExpanded(expanded: boolean, args: Container_Arguments): void;
+}
+
+export interface SectionConstructor extends ContainerConstructor {
+    new(id?: string, options?: Section_Params): Section;
+    extend(protoProps: object, classProps?: object): SectionConstructor;
 }

@@ -1,4 +1,4 @@
-import { Messenger } from "./Messenger";
+import { Messenger, MessengerConstructor } from "./Messenger";
 
 export interface Preview_Params {
     url: string;
@@ -13,7 +13,7 @@ export interface Preview_Data {
     settingValidities?: Record<string, any>;
 }
 
-export class Preview extends Messenger<any> {
+export interface Preview extends Messenger<any> {
     body: JQuery;
     window: JQuery;
 
@@ -47,5 +47,10 @@ export class Preview extends Messenger<any> {
     };
 
     // Note: origin is inherited from Messenger class as Value<string>
+}
+
+export interface PreviewConstructor extends MessengerConstructor {
+    new(params: Preview_Params, options?: object): Preview;
+    extend(protoProps: object, classProps?: object): PreviewConstructor;
 }
 

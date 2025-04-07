@@ -1,5 +1,5 @@
 import { Attachment, Cropper } from "./external";
-import { MediaControl } from "./MediaControl";
+import { MediaControl, MediaControlConstructor } from "./MediaControl";
 
 export interface ImageSelectOptions {
     handles: boolean;
@@ -19,11 +19,16 @@ export interface ImageSelectOptions {
     maxHeight?: number | undefined;
 }
 
-export class CroppedImageControl extends MediaControl {
+export interface CroppedImageControl extends MediaControl {
     onSelect(): void;
     onCropped(croppedImage: any): void; // TODO
     calculateImageSelectOptions(attachment: Attachment, controller: Cropper): ImageSelectOptions;
     mustBeCropped(flexW: boolean, flexH: boolean, dstW: number, dstH: number, imgW: number, imgH: number): boolean;
     onSkippedCrop(): void;
     setImageFromAttachment(attachment: any): void; // TODO
+}
+
+export interface CroppedImageControlConstructor extends MediaControlConstructor {
+    new(id?: string, options?: object): CroppedImageControl;
+    extend(protoProps: object, classProps?: object): CroppedImageControlConstructor;
 }

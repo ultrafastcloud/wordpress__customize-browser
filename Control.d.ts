@@ -23,8 +23,7 @@ export interface Control_Params {
     params?: Control_Params | undefined;
 }
 
-export class Control extends Class {
-    static instanceCounter?: number | undefined;
+export interface Control extends Class {
     defaultActiveArguments: Container_Arguments;
     defaults: Control_Params;
     params: Control_Params;
@@ -57,4 +56,10 @@ export class Control extends Class {
     dropdownInit(): void;
     renderContent(): void;
     addNewPage(): void;
+}
+
+export interface ControlConstructor {
+    instanceCounter?: number | undefined;
+    new(id?: string, options?: Control_Params): Control;
+    extend(protoProps: object, classProps?: object): ControlConstructor;
 }

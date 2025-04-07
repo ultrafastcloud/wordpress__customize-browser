@@ -1,4 +1,4 @@
-import { Messenger, Messenger_Params } from "./Messenger";
+import { Messenger, Messenger_Params, MessengerConstructor } from "./Messenger";
 import { Value } from "./Value";
 
 export interface Previewer_Params extends Messenger_Params {
@@ -19,7 +19,7 @@ export interface Previewer_Data {
     activeControls: any; // TODO
 }
 
-export class Previewer<T> extends Messenger<T> {
+export interface Previewer<T> extends Messenger<T> {
     refreshBuffer: null | number;
     deferred: Previewer_Deferred;
     previewUrl: Value<string>;
@@ -34,4 +34,9 @@ export class Previewer<T> extends Messenger<T> {
     login(): JQuery.Promise<any>;
     cheatin(): void;
     refreshNonces(): JQuery.Deferred<any>;
+}
+
+export interface PreviewerConstructor extends MessengerConstructor {
+    new<T>(params: Previewer_Params, options?: object): Previewer<T>;
+    extend<T>(protoProps: object, classProps?: object): PreviewerConstructor;
 }

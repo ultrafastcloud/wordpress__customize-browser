@@ -1,4 +1,4 @@
-import { Class } from "./Class";
+import { Class, ClassConstructor } from "./Class";
 
 export interface Notification_Params {
     message: string;
@@ -10,11 +10,16 @@ export interface Notification_Params {
     dismissible?: boolean | undefined;
 }
 
-export class Notification extends Class {
+export interface Notification extends Class {
     code: string;
     template: null | ((data: Notification) => void);
     templateId: string;
     containerClasses: string;
     initialize(code?: string, params?: Notification_Params): void;
     render(): JQuery;
+}
+
+export interface NotificationConstructor extends ClassConstructor {
+    new(code?: string, params?: Notification_Params): Notification;
+    extend(protoProps: object, classProps?: object): NotificationConstructor;
 }

@@ -8,7 +8,7 @@ export interface Messenger_Params {
     channel: string;
 }
 
-export class Messenger<T> extends Class {
+export interface Messenger<T> extends Class, Events<string> {
     channel: Value<string>;
     url: Value<string>;
     origin: Value<string>;
@@ -20,4 +20,7 @@ export class Messenger<T> extends Class {
     send(id: string, data: object | undefined): void;
 }
 
-export interface Messenger<T> extends Events<string> {}
+export interface MessengerConstructor {
+    new<T>(params: Messenger_Params, options?: object): Messenger<T>;
+    extend<T>(protoProps: object, classProps?: object): MessengerConstructor;
+}

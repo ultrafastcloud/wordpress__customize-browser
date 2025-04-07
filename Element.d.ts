@@ -12,8 +12,7 @@ export interface Element_Synchronizer {
     radio: Element_Synchronizer_Method<boolean>;
 }
 
-export class Element extends Value<string> {
-    static synchronizer: Element_Synchronizer;
+export interface Element extends Value<string> {
     element: JQuery;
     events: string;
     _value: any;
@@ -21,4 +20,10 @@ export class Element extends Value<string> {
     update(to?: string | JQuery): void;
     refresh(): void;
     find(selector: any): JQuery;
+}
+
+export interface ElementConstructor {
+    synchronizer: Element_Synchronizer;
+    new(element?: string | JQuery, options?: object): Element;
+    extend(protoProps: object, classProps?: object): ElementConstructor;
 }

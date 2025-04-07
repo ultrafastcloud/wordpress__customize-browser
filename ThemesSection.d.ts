@@ -1,9 +1,9 @@
 import { Control } from "./Control";
 import { Theme } from "./external";
-import { Section, Section_Params } from "./Section";
+import { Section, Section_Params, SectionConstructor } from "./Section";
 import { ThemeControl } from "./ThemeControl";
 
-export class ThemesSection extends Section {
+export interface ThemesSection extends Section {
     currentTheme: string;
     overlay: string;
     template: string;
@@ -40,4 +40,9 @@ export class ThemesSection extends Section {
     showDetails(theme: Theme, callback?: () => void): void;
     closeDetails(): void;
     containFocus(el: JQuery): void;
+}
+
+export interface ThemesSectionConstructor extends SectionConstructor {
+    new(id?: string, options?: Section_Params): ThemesSection;
+    extend(protoProps: object, classProps?: object): ThemesSectionConstructor;
 }

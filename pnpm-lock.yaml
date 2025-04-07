@@ -11,6 +11,10 @@ importers:
       '@types/jquery':
         specifier: '*'
         version: 3.5.32
+    devDependencies:
+      prettier:
+        specifier: 3.5.3
+        version: 3.5.3
 
 packages:
 
@@ -20,6 +24,11 @@ packages:
   '@types/sizzle@2.3.9':
     resolution: {integrity: sha512-xzLEyKB50yqCUPUJkIsrVvoWNfFUbIZI+RspLWt8u+tIW/BetMBZtgV2LY/2o+tYH8dRvQ+eoPf3NdhQCcLE2w==}
 
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+    engines: {node: '>=14'}
+    hasBin: true
+
 snapshots:
 
   '@types/jquery@3.5.32':
@@ -27,3 +36,5 @@ snapshots:
       '@types/sizzle': 2.3.9
 
   '@types/sizzle@2.3.9': {}
+
+  prettier@3.5.3: {}

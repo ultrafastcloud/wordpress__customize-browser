@@ -12,9 +12,12 @@ export interface Cropper {
 }
 
 // wp.customize.HeaderTool.ImageModel
-// tslint:disable-next-line:no-unnecessary-class
-export class ImageModel {
-    constructor(_: { header: any; choice: any }); // TODO
+export interface ImageModel {
+    // Properties and methods would go here
+}
+
+export interface ImageModelConstructor {
+    new(_: { header: any; choice: any }): ImageModel;
 }
 
 export interface Theme {
