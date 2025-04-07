@@ -58,5 +58,5 @@ export interface Customize extends Values<Setting<any>> {
     l10n: Record<string, string>;
     previewer: Previewer<string>;
     Preview: typeof Preview;
-    preview: Preview;
+    preview?: Preview;
 }
