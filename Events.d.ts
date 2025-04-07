@@ -1,7 +1,7 @@
 export class Events<T extends keyof any> {
     // TODO: class with statics instead?
     topics: Record<T, JQuery.Callbacks>;
-    trigger(id: T): this;
-    bind(id: T): this;
-    unbind(id: T): this;
+    trigger(id: T, ...args: any[]): this;
+    bind(id: T, callback: (...args: any[]) => void, context?: any): this;
+    unbind(id: T, callback?: (...args: any[]) => void): this;
 }
