@@ -92,7 +92,6 @@ For more information about the WordPress Customize API, see:
 Files were exported from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/wordpress__customize-browser).
 
 ### Additional Details
-* Last updated: Mon, 20 Nov 2023 23:36:24 GMT
 * Dependencies: [@types/jquery](https://npmjs.com/package/@types/jquery)
 
 ## Development
