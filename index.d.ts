@@ -36,44 +36,44 @@ import { Value } from "./Value";
 import { Values } from "./Values";
 
 declare global {
-    namespace wordpress__customize {
-        export {
-            BackgroundControl,
-            BackgroundPositionControl,
-            Class,
-            CodeEditorControl,
-            ColorControl,
-            Control,
-            CroppedImageControl,
-            DateTimeControl,
-            Element,
-            Events,
-            HeaderControl,
-            ImageControl,
-            MediaControl,
-            Messenger,
-            Notification,
-            Notifications,
-            OuterSection,
-            OverlayNotification,
-            Panel,
-            Preview,
-            Previewer,
-            PreviewFrame,
-            PreviewLinkControl,
-            Section,
-            Setting,
-            SiteIconControl,
-            ThemeControl,
-            ThemesPanel,
-            ThemesSection,
-            UploadControl,
-            Value,
-            Values,
-        };
-    }
+	namespace wordpress__customize {
+		export {
+			BackgroundControl,
+			BackgroundPositionControl,
+			Class,
+			CodeEditorControl,
+			ColorControl,
+			Control,
+			CroppedImageControl,
+			DateTimeControl,
+			Element,
+			Events,
+			HeaderControl,
+			ImageControl,
+			MediaControl,
+			Messenger,
+			Notification,
+			Notifications,
+			OuterSection,
+			OverlayNotification,
+			Panel,
+			Preview,
+			Previewer,
+			PreviewFrame,
+			PreviewLinkControl,
+			Section,
+			Setting,
+			SiteIconControl,
+			ThemeControl,
+			ThemesPanel,
+			ThemesSection,
+			UploadControl,
+			Value,
+			Values,
+		};
+	}
 
-    interface wp {
-        customize: Customize;
-    }
+	interface wp {
+		customize: Customize;
+	}
 }

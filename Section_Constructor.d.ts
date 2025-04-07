@@ -1,7 +1,7 @@
-import { OuterSection } from "./OuterSection";
-import { ThemesSection } from "./ThemesSection";
+import { OuterSectionConstructor } from "./OuterSection";
+import { ThemesSectionConstructor } from "./ThemesSection";
 
 export interface Section_Constructor {
-    themes: ThemesSection;
-    outer: OuterSection;
+	themes: ThemesSectionConstructor;
+	outer: OuterSectionConstructor;
 }
