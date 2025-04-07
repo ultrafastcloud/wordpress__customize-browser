@@ -21,6 +21,7 @@ import { Notifications } from "./Notifications";
 import { OuterSection } from "./OuterSection";
 import { OverlayNotification } from "./OverlayNotification";
 import { Panel } from "./Panel";
+import { Preview } from "./Preview";
 import { Previewer } from "./Previewer";
 import { PreviewFrame } from "./PreviewFrame";
 import { PreviewLinkControl } from "./PreviewLinkControl";
@@ -56,6 +57,7 @@ declare global {
             OuterSection,
             OverlayNotification,
             Panel,
+            Preview,
             Previewer,
             PreviewFrame,
             PreviewLinkControl,
@@ -70,7 +72,7 @@ declare global {
             Values,
         };
     }
-    
+
     interface wp {
         customize: Customize;
     }

@@ -1,0 +1,60 @@
+import { Messenger, Messenger_Params } from "./Messenger";
+
+export interface Preview_Params {
+    url: string;
+    channel: string;
+}
+
+export interface Preview_Data {
+    currentUrl: string;
+    activePanels: Record<string, boolean>;
+    activeSections: Record<string, boolean>;
+    activeControls: Record<string, boolean>;
+    settingValidities?: Record<string, any>;
+}
+
+export class Preview extends Messenger<any> {
+    body: JQuery;
+    window: JQuery;
+
+    /**
+     * Initialize the preview.
+     *
+     * @param params - Parameters to configure the preview.
+     * @param options - Extend any instance parameter or method with this object.
+     */
+    initialize(params: Preview_Params, options?: object): void;
+
+    /**
+     * Handle link clicks in preview.
+     * 
+     * @param event - jQuery event object.
+     */
+    handleLinkClick(event: JQuery.ClickEvent): void;
+
+    /**
+     * Handle form submits in preview.
+     * 
+     * @param event - jQuery event object.
+     */
+    handleFormSubmit(event: JQuery.SubmitEvent): void;
+
+    /**
+     * Get the URL origin.
+     */
+    origin(): string;
+
+    /**
+     * Get current scheme from URL.
+     */
+    scheme: {
+        get(): string;
+    };
+}
+
+declare module "./Customize" {
+    interface Customize {
+        Preview: typeof Preview;
+        preview: Preview;
+    }
+}
