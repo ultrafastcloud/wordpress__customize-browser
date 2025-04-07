@@ -4,6 +4,7 @@ import { Control_Constructor } from "./Control_Constructor";
 import { Notifications } from "./Notifications";
 import { Panel } from "./Panel";
 import { Panel_Constructor } from "./Panel_Constructor";
+import { Preview } from "./Preview";
 import { Previewer } from "./Previewer";
 import { Section } from "./Section";
 import { Section_Constructor } from "./Section_Constructor";
@@ -56,4 +57,6 @@ export interface Customize extends Values<Setting<any>> {
     settings: any; // TODO
     l10n: Record<string, string>;
     previewer: Previewer<string>;
+    Preview: typeof Preview;
+    preview: Preview;
 }

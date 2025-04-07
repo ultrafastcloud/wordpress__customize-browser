@@ -1,4 +1,4 @@
-import { Messenger, Messenger_Params } from "./Messenger";
+import { Messenger } from "./Messenger";
 
 export interface Preview_Params {
     url: string;
@@ -27,22 +27,17 @@ export class Preview extends Messenger<any> {
 
     /**
      * Handle link clicks in preview.
-     * 
+     *
      * @param event - jQuery event object.
      */
     handleLinkClick(event: JQuery.ClickEvent): void;
 
     /**
      * Handle form submits in preview.
-     * 
+     *
      * @param event - jQuery event object.
      */
     handleFormSubmit(event: JQuery.SubmitEvent): void;
-
-    /**
-     * Get the URL origin.
-     */
-    origin(): string;
 
     /**
      * Get current scheme from URL.
@@ -50,11 +45,7 @@ export class Preview extends Messenger<any> {
     scheme: {
         get(): string;
     };
+
+    // Note: origin is inherited from Messenger class as Value<string>
 }
 
-declare module "./Customize" {
-    interface Customize {
-        Preview: typeof Preview;
-        preview: Preview;
-    }
-}
