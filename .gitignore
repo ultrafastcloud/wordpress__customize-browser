@@ -1,0 +1,5 @@
+node_modules
+.vscode/sftp.json
+
+.sql
+.env
